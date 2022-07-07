@@ -1,11 +1,12 @@
 import java.util.*;
 
+import javax.lang.model.util.ElementScanner14;
+
 public class ATM {
     
     public static void main(String[] args) {
-        //create 10 accounts
+        //creates 10 accounts
         final int MAX=10;
-        final double rate=0.01;
 
         Account[] accounts = new Account[MAX];
 
@@ -17,11 +18,24 @@ public class ATM {
         //ATM
         while(true)
         {
-            //user login
-            Scanner keyboard = new Scanner(System.in);
+            while(true)
+            {
+                //user login
+                Scanner keyboard = new Scanner(System.in);
 
-            System.out.print("\nEnter an id: ");
-            int id = keyboard.nextInt();
+                System.out.print("\nEnter an id: ");
+                int id = keyboard.nextInt();
+
+                //checks if valid id
+                if(id>=0 && id<=9)
+                {
+                    break;
+                }
+                else
+                {
+                    System.out.println("Invalid id, try again.");
+                }
+            }
 
             //serve the user
             while(true)
@@ -29,30 +43,34 @@ public class ATM {
                 //print menu
                 int choice = menu();
 
+                //balance
                 if(choice==1)
                 {
                     System.out.println("Your balance is " + accounts[id].get_balance());
                 }
+                //withdraw
                 else if(choice==2)
                 {
                     System.out.println("Enter your withdraw amount: ");
                     double amount=keyboard.nextDouble();
                     accounts[id].withdraw(amount);
                 }
+                //deposit
                 else if(choice==3)
                 {
                     System.out.println("Enter your deposit amount: ");
                     double amount = keyboard.nextDouble();
                     accounts[id].deposit(amount);
                 }
+                //user exit
                 else if(choice==4)
                 {
                     System.out.println("Have a good day!");
                     break;
                 }
+                //invalid input exeption
                 else
                 {
-                    //invalid
                     System.out.println("Invalid input, please choose 1-4");
                 }
 
