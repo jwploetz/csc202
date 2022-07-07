@@ -1,7 +1,5 @@
 import java.util.*;
 
-import javax.lang.model.util.ElementScanner14;
-
 public class ATM {
     
     public static void main(String[] args) {
@@ -18,24 +16,11 @@ public class ATM {
         //ATM
         while(true)
         {
-            while(true)
-            {
-                //user login
-                Scanner keyboard = new Scanner(System.in);
+            //user login
+            Scanner keyboard = new Scanner(System.in);
 
-                System.out.print("\nEnter an id: ");
-                int id = keyboard.nextInt();
-
-                //checks if valid id
-                if(id>=0 && id<=9)
-                {
-                    break;
-                }
-                else
-                {
-                    System.out.println("Invalid id, try again.");
-                }
-            }
+            System.out.print("\nEnter an id: ");
+            int id = keyboard.nextInt();
 
             //serve the user
             while(true)
@@ -46,7 +31,7 @@ public class ATM {
                 //balance
                 if(choice==1)
                 {
-                    System.out.println("Your balance is " + accounts[id].get_balance());
+                    System.out.println("Your balance is $" + accounts[id].get_balance());
                 }
                 //withdraw
                 else if(choice==2)
