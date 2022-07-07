@@ -9,7 +9,7 @@ public class ATM {
 
         Account[] accounts = new Account[MAX];
 
-        for(int i=0; 1<accounts.length; i++)
+        for(int i=0; i<accounts.length; i++)
         {
             accounts[i] = new Account(i, 100.0);
         }
