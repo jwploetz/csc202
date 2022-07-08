@@ -16,16 +16,16 @@ public class AvgScore {
 
         int n = user.nextInt();
 
-        int arr[] = new int[n];
+        double arr[] = new double[n];
 
 
         for (int i = 0; i < n; i++) {// for reading array
             System.out.print("\nEnter a score: ");
-            arr[i] = user.nextInt();
+            arr[i] = user.nextDouble();
 
         }
 
-        int max = arr[0];
+        double max = arr[0];
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] > max) {
                 max = arr[i];
@@ -43,16 +43,18 @@ public class AvgScore {
 
         //average scores
         double avg = total / arr.length;
-        System.out.println("\nThe average is: " + avg + "\n\n");
+        System.out.println("\nThe average score is " + avg + "\n\n");
 
-        for (int i : arr) { // for printing array
+        for (double i : arr) { // for printing variance from average
 
             if(i < avg)
             {
-                System.out.println(i + " is below average by " + (avg-i) + "\n");
+                //System.out.println(i + " is above average by " + (i - avg) + "\n");
+                System.out.printf(i + " is below average by %5.2f%n\n", (avg-i));
             }
             else if (i > avg) {
-                System.out.println(i + " is above average by " + (i - avg) + "\n");
+                //System.out.println(i + " is above average by " + (i - avg) + "\n");
+                System.out.printf(i + " is above average by %5.2f%n\n", (i-avg));
             }
             else
             {
