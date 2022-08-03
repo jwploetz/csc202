@@ -1,4 +1,4 @@
-public class Exercise_3 {
+public class Assignment_5 {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -79,5 +79,35 @@ class MyList{
         for(temp=head; temp!=null ; temp=temp.next)
             System.out.println("->" + temp.data);
         System.out.println();
+    }
+    // f        *method n that returns last item in list*
+    public int get_back()
+    {
+
+    }
+    // g        *method that inserts insert_me as the last item in the list*
+    public void insert_back(int insert_me)
+    {
+
+    }
+    // h        *method that deletes the last item in the list*
+    public void delete_back()
+    {
+
+    }
+    // i        *method that returns true if target is in the list and false otherwise*
+    public boolean search(int target)
+    {
+
+    }
+    // j        *method that inserts insert_me behind after_me item in the list (assume no duplicates in the linked list)*
+    public void insert(int after_me, int insert_me)
+    {
+
+    }
+    // k        *method that removes the delete_me item in the list*
+    public void remove(int delete_me)
+    {
+
     }
 }
